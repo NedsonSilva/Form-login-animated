@@ -1,0 +1,186 @@
+/* |||||||||||||||||||| GERAL |||||| */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  column-gap: 5rem;
+  padding: 0 2rem;
+  transition: 0.3s;
+}
+
+body.dark-mode {
+  background: #202024;
+}
+
+.dark-mode h1, .dark-mode a {
+  color: #FFF;
+}
+
+#dark-mode-active {
+  position: fixed;
+  width: 25px;
+  top: 10px;
+  right: 10px;
+  stroke: #FFF;
+  stroke-width: 1px;
+  fill: rgb(57, 57, 65);
+}
+
+/*|||||||||||\|||| IMAGE MAIN ||||||||||||*/
+.container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.container img {
+  width: 100%;
+  height: 70%;
+}
+
+/* |||||||||||||| LOGO */
+#logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+
+#logo img {  width: 100px; }
+
+#logo h1 { font-size: 2.9rem; }
+
+main {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* ||||||||| FORMULÁRIO ||||||| */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px 0 40px;
+}
+
+form label { position: relative; }
+
+/*||||||||||||| ICONS SVG |||||*/
+.user-icons {
+  display: inline;
+  position: absolute;
+  bottom: 14px;
+  width: 17px;
+}
+
+/* Edit SVG */
+.active svg path:not(:first-of-type), .active svg g{
+  fill: #3337A7;
+  transition: 0.2s;
+}
+
+/*|||||||||| INPUS ||||||||*/
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  border-bottom: 2px solid #d9d9d9;
+  font-size: 19px;
+  font-weight: bold;
+  color: #555;
+  transition: 0.5s;
+  margin-top: 40px;
+}
+
+label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  border-bottom: 2px solid #333797;
+  transform: scaleX(0);
+  transition: 0.5s;
+}
+
+label.active::after {
+  transform: scaleX(1);
+}
+/*|||||||| TITULOS DOS INPUTS */
+.titles {
+  position: absolute;
+  color: #999;
+  transform: translateY(200%);
+  margin-left: 30px;
+  width: max-content;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.active .titles {
+  transform: translateY(140%);
+  font-size: 16px;
+}
+
+
+/* |||||||| LINK FORGOT PASSWORD  |||| */
+form a {
+  padding: 10px 0;
+  align-self: flex-end;
+  font-weight: bold;
+  color: #999;
+  text-decoration: none;
+  transition: .2s;
+}
+
+form a:hover { color: #3337A7; }
+
+/* |||||||| BUTTON LOGIN */
+form button {
+  margin: 30px 0;
+  background-image: linear-gradient(to right, #3337A7, #3e43c6, #333797);
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #FFF;
+  font-weight: bold;
+  padding: 15px;
+  border: none; 
+  border-radius: 100px;
+  transition: 0.5s;
+}
+
+form button:hover { background-position: right; }
+
+@media screen and (min-width: 1200px) {
+  form { width: 85%; }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container { display: none; }
+
+  form {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  form { width: 60vw; }
+}
