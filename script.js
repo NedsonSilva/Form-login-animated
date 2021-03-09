@@ -8,7 +8,9 @@ function ActiveFocus() {
 //remover quando perder o foco
 function removeFocus() {
   let parent = this.parentNode;//pega label pai atual
-	parent.classList.remove("active");
+	if(this.value == '') {
+    parent.classList.remove("active");
+  }
 }
 
 inputs.forEach(inputs => {

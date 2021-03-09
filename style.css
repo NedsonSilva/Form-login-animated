@@ -18,7 +18,7 @@ body.dark-mode {
   background: #202024;
 }
 
-.dark-mode h1, .dark-mode a {
+.dark-mode #logo h1, .dark-mode a {
   color: #FFF;
 }
 
@@ -54,7 +54,7 @@ body.dark-mode {
 
 #logo img {  width: 100px; }
 
-#logo h1 { font-size: 2.9rem; }
+#logo h1 { font-size: 2.9rem; color: #444; }
 
 main {  
   display: flex;
